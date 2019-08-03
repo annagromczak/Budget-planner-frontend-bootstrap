@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Budżet osobisty</title>
+	<meta name="description" content="Aplikacja internetowa do prowadzenia budżetu osobistego!">
+	<meta name="keywords" content="aplikacja internetowa, budżet osobisty, oszczędzanie, pieniądze">
+	<meta name="author" content="Anna Gromczak">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap-datepicker/css/bootstrap-datepicker.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="css/fontello.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mali:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+		
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+	<script src="main.js"></script>
+	
+</head>
+
+<body onload="pobierzDate();">
+
+	<div class="wrapper">
+	
+		<header>
+		
+			<div class="page-header mt-2">
+			
+				<h1>Aplikacja internetowa do prowadzenia budżetu osobistego</h1>
+				<p> To nie od ilości zarobionych pieniędzy zależy jakość twojego myślenia i życia, <br />ale od jakości twojego myślenia zależy ilość pieniędzy, które zatrzymasz i jakość twojego życia <br /> – Rober Krool. </p>
+			
+			</div>
+			
+			<div id="chooseDates" class="modal" tabindex="-1" role="dialog" aria-labelledby="chooseDates" aria-hidden="true">
+			
+				<div class="modal-dialog">
+			
+					<div class="modal-content">
+						
+						<div class="modal-header">
+							<h5>Wybierz okres</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						
+						<div class="modal-body">
+						
+							<div class="row">
+							
+								<div class="col-5 text-center">
+									<label for="startingDate">Data początkowa</label>
+								</div>
+								
+								<div class="col-5 text-center">
+								<input data-provide="datepicker" id="startingDate" data-date-format="yyyy-mm-dd" value="2019-08-01" class="form-control">
+								</div>
+								
+								<div class="col-5 text-center mt-3">
+									<label for="endingDate">Data końcowa</label>
+								</div>
+								
+								<div class="col-5 text-center mt-3">
+									<input data-provide="datepicker" id="endingDate" data-date-format="yyyy-mm-dd" value="2019-08-30" class="form-control">
+								</div>
+								
+							</div>
+						
+						</div>
+					
+						<div class="modal-footer">
+						
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Anuluj</button>
+							<button type="button" class="btn btn-primary">Zapisz</button>
+						
+						</div>
+						
+					</div>
+					
+				</div>
+			
+			</div>
+						
+			<nav class="navbar navbar-expand-lg navbar-dark bg-navbar">
+							
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Toggler navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+							
+				<div class="collapse navbar-collapse justify-content-md-center" id="mainmenu">
+							
+					<ul class="navbar-nav">
+								
+						<li class="nav-item">
+							<a class="nav-link m-1" href="dodaj_przychód.html"> Dodaj przychód </a>
+						</li>
+									
+						<li class="nav-item">
+							<a class="nav-link m-1" href="dodaj_wydatek.html"> Dodaj wydatek </a>
+						</li>
+									
+						<li class="nav-item dropdown">
+							<a class="nav-link m-1 dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu" aria-haspopup="true"> Przeglądaj bilans </a>
+							
+							<div class="dropdown-menu" aria-labelledby="submenu">
+								<a class="dropdown-item" href="przegladaj_bilans.html">Bieżący miesiąc</a>
+								<a class="dropdown-item" href="przegladaj_bilans.html">Poprzedni miesiąc</a>
+								<a class="dropdown-item" href="przegladaj_bilans.html">Bieżący rok</a>
+								<a class="dropdown-item" href="#" data-toggle="modal" data-target="#chooseDates">Niestandardowy</a>
+							</div>
+							
+						</li>
+										
+						<li class="nav-item">
+							<a class="nav-link m-1" href="#"> Ustawienia </a>
+						</li>
+										
+						<li class="nav-item">
+							<a class="nav-link m-1" href="#"> Wyloguj </a>
+						</li>
+									
+					</ul>
+							
+				</div>
+				
+			</nav>
+						
+		</header>
+
+		<main>
+		
+			<section>
+
+				<div class="container p-4">
+			
+					<div class="jumbotron col-lg-10 m-auto p-3">
+					
+					<h5 class="h5 text-center mt-3">Podsumowanie przychodów oraz wydatków</h5>
+						
+						<div class="row">
+							
+							<div class="incomesTable col-md-5 offset-md-1 mt-3">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th scope="col" colspan="2" style="background-color: #00b8e6; text-align:center; color: white; font-size: 18px;">Przychody</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Wynagrodzenie</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>Odsetki bankowe</td>
+											<td>2</td>
+										</tr>
+										<tr>
+											<td>Sprzedaż na allegro</td>
+											<td>3</td>
+										</tr>
+										<tr>
+											<td>Inne</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td style="font-weight: 700;">Podsumowanie</td>
+											<td style="font-weight: 700;">10</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+							
+							<div class="expensesTable col-md-5 mt-3">
+								<table class="table table-striped">
+									<thead>
+										<tr>
+											<th scope="col" colspan="2" style="background-color: #00b8e6; text-align:center; color: white; font-size: 18px;">Wydatki</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Jedzenie</td>
+											<td>1</td>
+										</tr>								
+										<tr>
+											<td>Mieszkanie</td>
+											<td>2</td>
+										</tr>								
+										<tr>
+											<td>Transport</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Telekomunikacja</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Opieka zdrowotna</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Ubranie</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Higiena</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Dzieci</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Rozrywka</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Transport</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Wycieczka</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Szkolenia</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Książki</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Oszczędności</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Na złotą jesień, czyli emeryturę</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Spłata długów</td>
+											<td>3</td>
+										</tr>
+										<tr>
+											<td>Darowizna</td>
+											<td>3</td>
+										</tr>								
+										<tr>
+											<td>Inne wydatki</td>
+											<td>4</td>
+										</tr>
+										<tr>
+											<td style="font-weight: 700;">Podsumowanie</td>
+											<td style="font-weight: 700;">10</td>
+										</tr>
+									</tbody>
+								</table>
+							
+							</div>
+						
+						</div>
+							
+						<div>
+							
+							<div class="podsumowanieSalda col-lg-12 m-auto p-4">
+							
+								<div id="podsumowanie" style="font-size: 18px;"></div>
+							
+							</div>
+							
+						</div>
+						
+					</div>
+					
+				</div>
+			
+			</section>
+			
+		</main>
+		
+		<div class="push"></div>
+		
+	</div>
+				
+	<footer class="footer">
+	
+		<div class="container">
+		
+			<div class="row">
+			
+				<div class="col-md-12 text-center">
+				
+					<a href="http://annagromczak.com" target="_blank" class="sociallink"><i class="icon-college fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+					<a href="https://www.linkedin.com/in/anna-gromczak-630505119/" target="_blank" class="sociallink fa-lg white-text mr-md-5 mr-3 fa-2x"><i class="icon-linkedin-squared"></i></a>
+					<a href="https://github.com/annagromczak" target="_blank" class="sociallink fa-lg white-text mr-md-5 mr-3 fa-2x"><i class="icon-github-circled"></i></a>
+					<a href="https://it-leaders.pl/" target="_blank" class="sociallink"><i class="icon-users fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+					
+				</div>
+								
+			</div>
+			
+			<hr>
+					
+			<div class="footer-copyright text-center m-3"> 2019 &copy; Anna Gromczak. <i class="icon-mail-alt"></i>anna.gromczak@gmail.com</div>
+			
+		</div>
+
+	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+	<script src="bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+</body>
+</html>

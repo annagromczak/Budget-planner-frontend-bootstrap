@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<title>Budżet osobisty</title>
+	<meta name="description" content="Aplikacja internetowa do prowadzenia budżetu osobistego!">
+	<meta name="keywords" content="aplikacja internetowa, budżet osobisty, oszczędzanie, pieniądze">
+	<meta name="author" content="Anna Gromczak">
+	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="css/fontello.css">
+
+	<link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap&subset=latin-ext" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Mali:400,700&display=swap&subset=latin-ext" rel="stylesheet">
+		
+	<!--[if lt IE 9]>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+	<![endif]-->
+	
+	<script src="main.js"></script>
+	
+</head>
+
+<body onload="pobierzDate();">
+
+	<div class="wrapper">
+
+		<header>
+		
+			<div class="page-header mt-2">
+			
+				<h1>Aplikacja internetowa do prowadzenia budżetu osobistego</h1>
+				<p> To nie od ilości zarobionych pieniędzy zależy jakość twojego myślenia i życia, <br />ale od jakości twojego myślenia zależy ilość pieniędzy, które zatrzymasz i jakość twojego życia <br /> – Rober Krool. </p>
+			
+			</div>
+						
+		</header>
+
+		<main>
+		
+			<section>
+			
+				<div class="container p-4">
+				
+					<div class="jumbotron col-lg-10 m-auto p-md-5">
+				
+						<div class="row">
+						
+							<div class="signUp col-lg-6 text-center">
+								
+								<h3 class="h3 mb-4">Rejestracja</h3>
+								
+								<div class="row">
+								
+									<div class="col-md-10 offset-md-1 mb-3">
+									
+										<label for="inputLoginSingUp" class="sr-only">Login</label>
+										<input type="text" id="inputLoginSingUp" class="form-control" placeholder="Login" required>
+										
+									</div>
+									
+									<div class="col-md-10 offset-md-1 mb-3">
+										
+										<label for="inputPasswordSingUp" class="sr-only">Password</label>
+										<input type="password" id="inputPasswordSingUp" class="form-control" placeholder="Hasło" required>
+										
+									</div>
+									
+									<div class="col-md-10 offset-md-1 mb-3">
+										
+										<label for="inputName" class="sr-only">Name</label>
+										<input type="text" id="inputName" class="form-control" placeholder="Imię" required>
+										
+									</div>
+									
+									<div class="col-md-10 offset-md-1 mb-3">
+										
+										<label for="inputEmail" class="sr-only">Email</label>
+										<input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+										
+									</div>
+									
+								</div>
+							
+								<button class="btn btn-lg btn-primary" type="submit" style="width: 150px;">Załóż konto</button>
+								
+							</div>
+						
+							<div class="signIn col-lg-6 text-center">
+							
+								<h3 class="h3 mb-4">Logowanie</h3>
+								
+								<div class="row">
+								
+									<div class="col-md-10 offset-md-1 mb-3">
+									
+										<label for="inputLoginSingIn" class="sr-only">Login</label>
+										<input type="text" id="inputLoginSingIn" class="form-control" placeholder="Login" required autofocus>
+										
+									</div>
+									
+									<div class="col-md-10 offset-md-1 mb-3">
+										
+										<label for="inputPasswordSingIn" class="sr-only">Password</label>
+										<input type="password" id="inputPasswordSingIn" class="form-control" placeholder="Hasło" required>
+										
+									</div>
+									
+								</div>
+							
+								<button class="btn btn-lg btn-primary" type="submit" style="width: 150px;">Zaloguj</button>
+								
+							</div>
+						
+						</div>
+						
+					</div>
+				
+				</div> 
+
+			</section>
+			
+		</main>
+		
+	<div class="push"></div>
+		
+	</div>
+				
+	<footer class="footer">
+	
+		<div class="container">
+		
+			<div class="row">
+			
+				<div class="col-md-12 text-center">
+				
+					<a href="http://annagromczak.com" target="_blank" class="sociallink"><i class="icon-college fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+					<a href="https://www.linkedin.com/in/anna-gromczak-630505119/" target="_blank" class="sociallink fa-lg white-text mr-md-5 mr-3 fa-2x"><i class="icon-linkedin-squared"></i></a>
+					<a href="https://github.com/annagromczak" target="_blank" class="sociallink fa-lg white-text mr-md-5 mr-3 fa-2x"><i class="icon-github-circled"></i></a>
+					<a href="https://it-leaders.pl/" target="_blank" class="sociallink"><i class="icon-users fa-lg white-text mr-md-5 mr-3 fa-2x"></i></a>
+					
+				</div>
+								
+			</div>
+			
+			<hr>
+					
+			<div class="footer-copyright text-center m-3"> 2019 &copy; Anna Gromczak. <i class="icon-mail-alt"></i>anna.gromczak@gmail.com</div>
+			
+		</div>
+
+	</footer>
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	
+	<script src="js/bootstrap.min.js"></script>
+
+</body>
+</html>

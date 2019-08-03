@@ -1,0 +1,116 @@
+html, body 
+{
+  height: 99%;
+  margin: 0;
+}
+
+body
+{
+	/* Background pattern from Toptal Subtle Patterns */
+	background-image: url("img/extra_clean_paper.png");
+	font-family: 'Mali', cursive;
+}
+
+.navbar
+{
+	min-height: 61.6px;
+}
+
+.bg-navbar
+{
+	background-color: #00b8e6;
+}
+
+.navbar-nav > li > a
+{
+	color: white !important;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.navbar-nav > li > a:hover
+{
+	color: #d9d9d9 !important;
+}
+
+.navbar-nav > li > .dropdown-menu
+{
+	background-color: #00b8e6 !important;
+}
+
+.navbar-nav > li > .dropdown-menu > a
+{
+	color: white !important;
+	font-weight: 700;
+	font-size: 20px;
+}
+
+.navbar-nav > li > .dropdown-menu > a:hover
+{
+	color: #d9d9d9 !important;
+	background-color: #00b8e6;
+}
+
+/*
+.navbar-nav li:hover>.dropdown-menu
+{
+	display: block;
+}
+*/
+
+.jumbotron
+{
+	background-color: white;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+}
+
+.page-header h1
+{
+	font-size: 22px;
+	font-weight: 700;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+.page-header p
+{
+	font-size: 12px;
+	font-family: 'Pacifico', cursive;
+	color: #808080;
+	letter-spacing: 2px;
+	text-align: center;
+}
+
+#podsumowanie
+{
+	text-align: center;
+	font-weight: 700;
+	font-size: 22px;
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited
+{
+	background-color: #00b8e6 !important;
+	border-color: #00b8e6 !important;
+}
+
+.table
+{
+	font-size: 15px;
+	line-height: 1;
+	text-align: center;
+}
+
+.footer, .push
+{
+	height: 138px;
+}
+
+.wrapper
+{
+	min-height: 100%;
+	margin-bottom: -138px;
+}
+
